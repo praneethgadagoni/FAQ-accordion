@@ -1,0 +1,136 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #191817, #fc4a1a); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: rgb(41, 24, 24);
+  padding-bottom: 20px;
+}
+
+.tech-logo {
+  width: 70px;
+  height: 60px;
+  margin-left: -200px;
+}
+
+
+.overview-panel {
+  width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.tech-container {
+  position: relative;
+  margin: 15px 0;
+}
+
+
+.tech-question {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 0;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+}
+
+.tech-question::before {
+  content: '+';
+  position: absolute;
+  right: -10px;
+  font-size: 30px;
+  color: #333;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.tech-answer {
+  font-size: 18px;
+  background: #fff;
+  height: 0;
+  overflow: hidden;
+  text-align: justify;
+  transition: height 0.4s ease-in-out;
+  color: #555;
+}
+
+.tech-container.active .tech-answer {
+  height: 80px; 
+}
+
+.tech-container.active .tech-question::before {
+  content: '-';
+  font-size: 35px;
+}
+
+
+.overview-panel hr {
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .overview-panel {
+    width: 500px;
+    padding: 40px;
+  }
+  .tech-answer {
+    width: 460px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .overview-panel {
+    width: 400px;
+    padding: 35px;
+  }
+  .tech-answer {
+    width: 360px;
+  }
+  .tech-question {
+    font-size: 20px;
+  }
+  .tech-answer {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .overview-panel {
+    width: 100%;
+    padding: 20px;
+  }
+  .tech-answer {
+    width: 100%;
+  }
+  .tech-question {
+    font-size: 18px;
+  }
+  .tech-answer {
+    font-size: 16px;
+  }
+  .tech-question::before {
+    right: 5px;
+    font-size: 25px;
+  }
+}
